@@ -1,4 +1,4 @@
-import React,{Component} from 'react' ;
+import React from 'react' ;
 import {Link} from 'react-router-dom' ;
 function Navbar(){
     //<Link to="/">Home</Link>
@@ -17,7 +17,7 @@ function Navbar(){
 
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
                     <ul className="nav navbar-nav">
-                        <li className="active"><Link to="/">Home</Link></li>
+                        <li className="active"><Link to="/home">Home</Link></li>
                         <li><Link to="/about">About</Link></li>
                         <li><a href="#">Link</a></li>
                     </ul>
