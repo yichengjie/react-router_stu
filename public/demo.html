@@ -1,0 +1,36 @@
+<!doctype html public "-//w3c//dtd html 4.01//en" "http://www.w3.org/tr/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>左右布局－左边定宽，右边不定宽；右在上，左在下 </title>
+<style>
+    /* reset */
+    *,body{margin:0;padding:0;}
+    /* commons */
+    body{font-size:13px;}
+    .clearfix{zoom:1;}
+    .clearfix:after{content:´.´;display:block;visibility:none;height:0;clear:both;}
+    #bd{background-color:#DDD;min-height:50px;_height:50px;}
+    #bd .right{background-color:red;float:right;width:100%;margin-left:-25em;}
+    #bd .right .content{margin-left:270px;background-color:blue;color:#FFF;}
+    #bd .left{background-color:green;color:#FFF;width:260px;float:left;}
+</style>
+</head>
+<body>
+    <div id="hd"> <p>上 </p> </div>
+    <div id="bd" class="clearfix">
+        <div class="right">
+            <div class="content">
+                <p>右我在右边 </p>
+                <p>右我在右边 </p>
+                <p>右我在右边 </p>
+                <p>右我在右边 </p>
+            </div>
+        </div>
+        <div class="left">
+            <p>我在左边 </p>
+        </div>
+    </div>
+    <div id="ft"> <p>下 </p> </div>
+</body>
+</html>
