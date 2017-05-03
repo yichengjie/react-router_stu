@@ -1,0 +1,1 @@
+function ContentRightRegion.jsx
