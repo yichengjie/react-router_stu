@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Component} from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -9,21 +9,32 @@ import Navbar from './Navbar.jsx' ;
 import ListGroup from './ListGroup.jsx' ;
 
 
-const BasicExample = () =>(
-  <Router>
-    <div className="App">
-        <Navbar />
-        <div className="main-content">
-          <div className="content-left">
-            <ListGroup />
+class UnifiedInterfaceTestPlatform extends  Component{
+
+  constructor(props){
+     super(props) ;
+     
+  }
+
+  render(){
+    // but you can use a location instead
+    return (
+        <Router>
+          <div className="App">
+              <Navbar />
+              <div className="main-content">
+                <div className="content-left">
+                  <ListGroup />
+                </div>
+                <div className="content-right">
+                  <Route exact  path="/" component={Home}/>
+                  <Route exact path="/home" component={Home}/>
+                  <Route path="/about" component={About}/>
+                </div>
+              </div>
           </div>
-          <div className="content-right">
-             <Route exact path="/" component={Home}/>
-             <Route exact path="/home" component={Home}/>
-             <Route path="/about" component={About}/>
-          </div>
-        </div>
-    </div>
-  </Router>
-)
-export default BasicExample ;
+        </Router>
+      ) ;
+  }
+}
+export default UnifiedInterfaceTestPlatform ;
