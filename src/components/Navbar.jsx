@@ -16,11 +16,11 @@ class Navbar extends Component{
     }
 
     getActiveClassObj(liName){
-        return (pathName) => {
+        return function(pathName){
             //console.info(`liName : ${liName} , pathName : ${pathName}`) ;
             const className = this.isActiveLi(liName,pathName) ? 'active' : '' ;
             return {className} ;
-        }
+        }.bind(this) ;
     }
 
     render(){

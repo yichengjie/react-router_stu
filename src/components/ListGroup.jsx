@@ -3,15 +3,12 @@ import React from 'react';
 function ListGroup(){
 
     return(
-        <div className="list-group">
-            <a href="#" className="list-group-item active">
-                SIH测试工具
-            </a>
-            <a href="#" className="list-group-item">OC附加服务</a>
-            <a href="#" className="list-group-item">ABR附加服务</a>
-            <a href="#" className="list-group-item">组件测试平台</a>
-            <a href="#" className="list-group-item">规则中心</a>
-        </div>
+        <ul className="list-group">
+            <li className="list-item">OC附加服务1</li>
+            <li className="list-item">OC附加服务2</li>
+            <li className="list-item">OC附加服务3</li>
+            <li className="list-item">OC附加服务4</li>
+        </ul>
     ) ;
 }
 

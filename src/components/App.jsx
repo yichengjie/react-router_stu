@@ -13,7 +13,6 @@ class UnifiedInterfaceTestPlatform extends  Component{
 
   constructor(props){
      super(props) ;
-     
   }
 
   render(){
