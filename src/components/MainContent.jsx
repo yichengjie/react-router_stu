@@ -1,32 +1,12 @@
 import React,{Component} from 'react' ;
 import {withRouter} from 'react-router-dom' ;
+import outputJson from './data/output.json' ;
 class MainContent extends Component{
     constructor(props){
         super(props) ;
         this.state ={
             inputValue:'',
-            outputValue:{
-                    "name": "demo-app",
-                    "version": "0.1.0",
-                    "private": true,
-                    "dependencies": {
-                        "bootstrap": "^3.3.7",
-                        "prop-types": "^15.5.8",
-                        "react": "^15.5.4",
-                        "react-dom": "^15.5.4",
-                        "react-router-dom": "^4.1.1",
-                        "react-transition-group": "^1.1.3"
-                    },
-                    "devDependencies": {
-                        "react-scripts": "0.9.5"
-                    },
-                    "scripts": {
-                        "start": "react-scripts start",
-                        "build": "react-scripts build",
-                        "test": "react-scripts test --env=jsdom",
-                        "eject": "react-scripts eject"
-                    }
-                }
+            outputValue:''
         } ;
     }
     componentWillReceiveProps(nextProps){
@@ -39,10 +19,14 @@ class MainContent extends Component{
         let value = event.target.value ;
         this.setState({inputValue:value}) ;
     }
+    handleQuery = (event) => {
+        this.setState({outputValue:outputJson}) ;
+    }
     render(){
         const {location} = this.props ;
         let {name} = location.state ;
         //console.info('location: ' , location) ;
+        const outputValue = this.state.outputValue ;
         return (
             <div className="main-edit-container">
                 <textarea className="inputTextarea" 
@@ -50,11 +34,11 @@ class MainContent extends Component{
                     onInput={this.handleInput}></textarea>
                 <br/>
                 <br/>
-                <button className="btn btn-primary main-btn">GO</button>
+                <button className="btn btn-primary main-btn" onClick={this.handleQuery}>GO</button>
                 <br/>
                 <br/>
                 <pre className="output-region">
-                    { JSON.stringify(this.state.outputValue,null,2)}
+                    {outputValue ? JSON.stringify(this.state.outputValue,null,2) : ''}
                 </pre>
             </div>
         ) ;
