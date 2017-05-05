@@ -39,11 +39,29 @@ body {
   border-bottom: 1px solid #EEE ;
 }
 .list_item a{
+  display: inline-block ;
   text-decoration:none ;
   color: #333;
   cursor: pointer ;
+  width: 100% ;
+  height: 100% ;
 }
 .list_item:hover{
   background-color:#EEE ;
+}
+.main-edit-container{
+  width: 97% ;
+  height: 100% ;
+}
+.inputTextarea{
+  width: 100% ;
+  height: 230px;
+}
+.output-region{
+  width: 100% ;
+  height: 230px;
+}
+.main-btn{
+  width: 100% ;
 }
 
