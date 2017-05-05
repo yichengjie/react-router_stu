@@ -20,7 +20,9 @@ class UnifiedInterfaceTestPlatform extends  Component{
     return (
         <Router>
           <div className="App">
-              <Navbar />
+              <div className="header">
+                  <Navbar />
+              </div>
               <div className="main-content">
                 <div className="content-left">
                   <ListGroup />

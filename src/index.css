@@ -10,36 +10,35 @@ body {
 .main-content{
   padding-top: 60px;
   height: 100% ;
+  display: flex ;
+  flex-direction: row ;
 }
 
 .main-content .content-left{
-  width:230px;
-  height: 100%;
-  float:left;
-  border-right: 1px solid #EEE;
+  width: 220px;
+  height: 100% ;
+  border-right: 1px solid #EEE ;
+  border-top: 1px solid #EEE ;
 }
-
 .main-content .content-right{
-  float:right;
-  width:100%;
-  margin-left:-240px;
-  padding-left: 240px ;
-  z-index: -100;
+  flex-grow:2;
+  padding: 0 5px;
+  height: 100% ;
 }
-
-.list-group{
-  display: block ;
+.list_group{
+  margin: 0 ;
+  padding: 0 6px ;
   list-style: none ;
-  margin: 0;
-  padding: 0 6px;;
 }
-.list-item{
-  display: block;
-  widows: 100%;
-  height: 30px;
-  line-height: 30px;
-  border-bottom: 1px solid #EEE;
-  cursor: pointer;
+.list_item{
+  padding: 0 ;
+  margin: 0 ;
+  height: 30px ;
+  line-height: 30px ;
+  cursor: pointer ;
+  border-bottom: 1px solid #EEE ;
 }
-
+.list_item:hover{
+  background-color:#EEE ;
+}
 
