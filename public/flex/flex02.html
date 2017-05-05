@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水平垂直居中demo</title>
+    <style type="text/css">
+        body,html{
+            height: 100% ;
+            width: 100% ;
+            margin: 0 ;
+            padding: 0 ;
+        }
+        .container{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .box{
+            display: inline-flex;
+            width: 200px;
+            height: 200px ;
+            background: red; 
+        }
+    </style>
+</head>
+<body>
+    <!--flex-flow属性是flex-direction属性和flex-wrap
+        属性的简写形式，默认值为row nowrap-->
+    <!--justify-content属性定义了项目在主轴上的对齐方式
+    justify-content: flex-start | flex-end | center | 
+    space-between | space-around;-->
+    <!--align-items属性定义项目在交叉轴上如何对齐。
+        flex-start：交叉轴的起点对齐。
+        flex-end：交叉轴的终点对齐。
+        center：交叉轴的中点对齐。
+        baseline: 项目的第一行文字的基线对齐。
+        stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+    -->
+    <div class="container">
+        <div class="box"></div>
+    </div>
+
+</body>
+</html>
