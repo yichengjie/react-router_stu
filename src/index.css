@@ -38,6 +38,11 @@ body {
   cursor: pointer ;
   border-bottom: 1px solid #EEE ;
 }
+.list_item a{
+  text-decoration:none ;
+  color: #333;
+  cursor: pointer ;
+}
 .list_item:hover{
   background-color:#EEE ;
 }

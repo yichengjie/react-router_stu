@@ -7,6 +7,7 @@ import Home from './Home.jsx' ;
 import About from './About.jsx' ;
 import Navbar from './Navbar.jsx' ;
 import ListGroup from './ListGroup.jsx' ;
+import MainContent from './MainContent.jsx' ;
 
 
 class UnifiedInterfaceTestPlatform extends  Component{
@@ -31,6 +32,7 @@ class UnifiedInterfaceTestPlatform extends  Component{
                   <Route exact  path="/" component={Home}/>
                   <Route exact path="/home" component={Home}/>
                   <Route path="/about" component={About}/>
+                  <Route path="/main" component={MainContent}/>
                 </div>
               </div>
           </div>
