@@ -9,12 +9,8 @@ import Navbar from './Navbar.jsx' ;
 import ListGroup from './ListGroup.jsx' ;
 import MainContent from './MainContent.jsx' ;
 
-
 class UnifiedInterfaceTestPlatform extends  Component{
 
-  constructor(props){
-     super(props) ;
-  }
 
   render(){
     // but you can use a location instead

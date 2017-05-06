@@ -1,6 +1,7 @@
 import React,{Component} from 'react' ;
 import {withRouter} from 'react-router-dom' ;
-import outputJson from './data/output.json' ;
+import outputJson from '../data/output.json' ;
+import {findItemByHash,getListGroupRouteData} from '../api/ListGroupApi.js' ;
 class MainContent extends Component{
     constructor(props){
         super(props) ;
@@ -8,13 +9,26 @@ class MainContent extends Component{
             inputValue:'',
             outputValue:''
         } ;
+        const listGroup = getListGroupRouteData() ;
+        this.listGroup = listGroup ;
+    }
+    componentDidMount() {
+        this.dealInitPageParam(this.props) ; 
     }
     componentWillReceiveProps(nextProps){
-        const {location} = this.props ;
-        let {name} = location.state ;
-        let templateInfo = '模版字符窜 : ' +  name ;
+        this.dealInitPageParam(nextProps) ;
+    }
+
+    dealInitPageParam(newProps){
+        const {location} = newProps ;
+        let {hash} = location ;
+        let listItem = findItemByHash(this.listGroup,hash) ;
+        //console.info('listItem , ' , listItem) ;
+        let templateInfo = '模版字符窜 : ' +  listItem.title ;
         this.setState({inputValue:templateInfo}) ;
     }
+
+
     handleInput = (event) =>{
         let value = event.target.value ;
         this.setState({inputValue:value}) ;
@@ -23,8 +37,6 @@ class MainContent extends Component{
         this.setState({outputValue:outputJson}) ;
     }
     render(){
-        const {location} = this.props ;
-        let {name} = location.state ;
         //console.info('location: ' , location) ;
         const outputValue = this.state.outputValue ;
         return (
